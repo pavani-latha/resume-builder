@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <form id="resume-form">
+      <h1>Resume Builder</h1>
+      <div class="progress-bar" id="progress-bar"></div>
+
+      <label>Name</label>
+      <input id="name" placeholder="Your Name" />
+
+      <label>Email</label>
+      <input id="email" placeholder="Email" />
+
+      <label>Phone</label>
+      <input id="phone" placeholder="Phone Number" />
+
+      <label>Profile Summary</label>
+      <textarea id="summary" placeholder="Profile Summary"></textarea>
+
+      <label>Education</label>
+      <div id="education-section">
+        <input type="text" class="education-input" placeholder="Degree, Institution, Year" />
+      </div>
+      <button type="button" id="add-education" class="btn-small">+ Add Education</button>
+
+      <label>Experience</label>
+      <div id="experience-section">
+        <input type="text" class="experience-input" placeholder="Position, Company, Year" />
+      </div>
+      <button type="button" id="add-experience" class="btn-small">+ Add Experience</button>
+
+      <label>Skills</label>
+      <div class="skills">
+        <label><input type="checkbox" value="JavaScript" /> JavaScript</label>
+        <label><input type="checkbox" value="HTML" /> HTML</label>
+        <label><input type="checkbox" value="CSS" /> CSS</label>
+      </div>
+      <div class="add-skill">
+        <input type="text" id="custom-skill" placeholder="Add Custom Skill" />
+        <button type="button" id="add-skill-btn" class="btn-small">Add</button>
+      </div>
+
+      <label>Languages Known</label>
+      <div id="languages-section">
+        <input type="text" class="language-input" placeholder="Language" />
+      </div>
+      <button type="button" id="add-language" class="btn-small">+ Add Language</button>
+
+      <label>Declaration</label>
+      <textarea id="declaration" placeholder="Declaration statement"></textarea>
+
+      <label>Template</label>
+      <select id="template-selector">
+        <option value="modern">Modern</option>
+        <option value="classic">Classic</option>
+        <option value="elegant">Elegant</option>
+      </select>
+
+      <div class="form-buttons">
+        <button type="button" id="download-btn">Download PDF</button>
+        <button type="button" id="clear-btn" class="btn-outline">Clear</button>
+      </div>
+    </form>
+
+    <div class="resume-preview modern" id="resume-preview">
+      <h2 id="preview-name">Your Name</h2>
+      <p id="preview-email"></p>
+      <p id="preview-phone"></p>
+      <h3>Profile Summary</h3>
+      <p id="preview-summary"></p>
+      <h3>Education</h3>
+      <ul id="preview-education"></ul>
+      <h3>Skills</h3>
+      <ul id="preview-skills"></ul>
+      <h3>Experience</h3>
+      <ul id="preview-experience"></ul>
+      <h3>Languages Known</h3>
+      <ul id="preview-languages"></ul>
+      <h3>Declaration</h3>
+      <p id="preview-declaration"></p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
